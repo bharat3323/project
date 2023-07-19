@@ -1,55 +1,35 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class java1 {
-
     public static void main(String[] args) {
-
-        double num1, num2;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number:");
-
-        /*
-         * We are using data type double so that user
-         * can enter integer as well as floating point
-         * value
-         */
-        num1 = scanner.nextDouble();
-        System.out.print("Enter second number:");
-        num2 = scanner.nextDouble();
-
-        System.out.print("Enter an operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-
-        scanner.close();
-        double output;
-
-        switch (operator) {
-            case '+':
-                output = num1 + num2;
+        Scanner sc = new Scanner(System.in);
+        int opertor, number1, number2, Result;
+        System.out.println("Enter first number");
+        number1 = sc.nextInt();
+        System.out.println("Enter second number");
+        number2 = sc.nextInt();
+        System.out.println(" 1.Add \n 2.Sub \n 3.Mul\n 4.Div \n 5.Mod");
+        opertor = sc.nextInt();
+        Result = 0;
+        switch (opertor) {
+            case 1:
+                Result = number1 + number2;
                 break;
-
-            case '-':
-                output = num1 - num2;
+            case 2:
+                Result = number1 - number2;
                 break;
-
-            case '*':
-                output = num1 * num2;
+            case 3:
+                Result = number1 * number2;
                 break;
-
-            case '/':
-                output = num1 / num2;
+            case 4:
+                Result = number1 / number2;
+            case 5:
+                Result = number1 % number2;
                 break;
-
-            /*
-             * If user enters any other operator or char apart from
-             * +, -, * and /, then display an error message to user
-             * 
-             */
             default:
-                System.out.printf("You have entered wrong operator");
-                return;
+                System.out.println("written opertor is inavlid");
         }
+        System.out.println("Result is:" + Result);
 
-        System.out.println(num1 + " " + operator + " " + num2 + ": " + output);
     }
 }
